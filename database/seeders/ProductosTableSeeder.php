@@ -3,16 +3,17 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Producto;
 
-class DatabaseSeeder extends Seeder
+class ProductosTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-         $this->call(ProductostableSeeder::class);
+        $product = Producto::factory()->create();
     }
 }
