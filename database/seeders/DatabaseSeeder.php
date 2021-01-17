@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(ProductostableSeeder::class);
+         \App\Models\Producto::factory(100)->create();
     }
 }

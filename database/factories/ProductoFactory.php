@@ -23,18 +23,15 @@ class ProductoFactory extends Factory
      */
     public function definition()
     {
-        $arrays = range(0,100);
-        foreach ($arrays as $valor) {
-          DB::table('producto')->insert([
-        'id'=> rand(10, 9999), 
-        'clave'=> rand(1, 500),
-        'producto' => Str::random(10),
-        'existencias' => 2,
-        'precio_unitario' => 10.1,
-        'unidad_medida' => "Pieza",
-        'estatus' => "Activo"
-          ]);
+        return[
+        'clave'=> Str::random(25), 
+        'producto' => $this->faker->text(rand(100,200)),
+        'existencias' => $this->faker->randomNumber(3,true),
+        'precio_unitario' => $this->faker->randomFloat(2,5,100),
+        'unidad_medida' => $this->faker->randomElement(['Pieza', 'Caja', 'Kilogramo', 'Metro', 'Bolsa', 'Otro']),
+        'estatus' => $this->faker->randomElement(['Activo', 'Inactivo'])
+          ];
         }
 
-    }
 }
+
