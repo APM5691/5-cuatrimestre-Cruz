@@ -13,10 +13,9 @@ class TipoDeJoya extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-            $table->id()->conment('id');
+        Schema::create('tipo_de_joya', function (Blueprint $table) {
+            $table->id();
             $table->string ('tipo_de_joya',45)->conment('tipo_de_joya');
-            $table->int('productos_id')->conment('productos_id');
             $table->timestamps();
         });
     }
@@ -28,6 +27,7 @@ class TipoDeJoya extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tipo_de_joya');
+
     }
 }

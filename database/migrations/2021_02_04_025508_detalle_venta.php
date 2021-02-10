@@ -13,11 +13,10 @@ class DetalleVenta extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-            $table->id()->conment('id');
+        Schema::create('detalle_venta', function (Blueprint $table) {
+            $table->id();
             $table->string ('detalle_venta',45)->conment('detalle_venta');
             $table->string('ventas_id')->conment('ventas_id');
-            $table->int('productos_clave_producto')->conment('productos_clave_producto');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class DetalleVenta extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('detalle_venta');
     }
 }

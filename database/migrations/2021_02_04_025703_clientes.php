@@ -13,9 +13,9 @@ class Clientes extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-            $table->id()->conment('id');
-            $table->string ('nombre_clente',45)->conment('nombre_cliente');
+        Schema::create('clientes', function (Blueprint $table) {
+            $table->id();
+            $table->string ('nombre_cliente',45)->conment('nombre_cliente');
             $table->string('primer_apellido',45)->conment('primer_apellido');
             $table->string('segundo_apellido',45)->conment('segundo_apellido');
             $table->string('password',45)->conment('password');
@@ -33,6 +33,7 @@ class Clientes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('clientes');
+        
     }
 }
