@@ -19,7 +19,7 @@ class CreateDireccionesTable extends Migration
                $table->char('calle', 45);
                $table->integer('numero');
                $table->char('localidad', 45);
-               $table->char('municipio', 45);
+               $table->char('municipio', 45); 
                $table->char('estado', 45);
                $table->timestamps();
            });
