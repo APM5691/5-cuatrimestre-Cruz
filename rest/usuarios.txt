@@ -3,3 +3,21 @@ GET http://127.0.0.1:8000/api/usuarios HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 2|HPYltlCSe85zMFPSPfWA0Vt3UkpnyZCIpZp07Piu
+
+## Crear usuario
+POST http://127.0.0.1:8000/api/usuarios HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|HPYltlCSe85zMFPSPfWA0Vt3UkpnyZCIpZp07Piu
+
+{
+  "name":"Benito Pablo"
+  , "primer_apellido":"Juárez"
+  , "segundo_apellido":"García"
+  , "fecha_nacimiento":"1806-03-21"
+  , "sexo":"Masculino"
+  , "perfil":"Operador"
+  , "estatus":"Activo"
+  , "email":"benito.pablo@correo.com"
+  , "password":"123456789"
+}
