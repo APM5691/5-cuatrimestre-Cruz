@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TipoDeJoya extends Migration
+class CreateDetalleMaterialTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class TipoDeJoya extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_de_joya', function (Blueprint $table) {
+        Schema::create('detalle_material', function (Blueprint $table) {
             $table->id();
-            $table->string ('tipo_joya',45);
+            $table->char('material_principal', 45);
+            $table->char('material_secundario', 45);
+            $table->integer('material_id');
+            $table->integer('producto_id');
             $table->timestamps();
         });
     }
@@ -27,7 +30,6 @@ class TipoDeJoya extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_de_joya');
-
+        Schema::dropIfExists('detalle_material');
     }
 }

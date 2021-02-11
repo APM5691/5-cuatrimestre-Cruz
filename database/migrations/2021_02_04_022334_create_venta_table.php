@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDireccionesTable extends Migration
+class CreateVentaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateDireccionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('direcciones', function (Blueprint $table) {
-               $table->id();
+        Schema::create('venta', function (Blueprint $table) {
+            $table->id();
+               $table->float('monto_total', 8, 2);
+               $table->integer('direcciones_id');
                $table->integer('clientes_id');
-               $table->char('calle', 45);
-               $table->integer('numero');
-               $table->char('localidad', 45);
-               $table->char('municipio', 45); 
-               $table->char('estado', 45);
                $table->timestamps();
-           });
+        });
     }
 
     /**
@@ -32,6 +29,6 @@ class CreateDireccionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('direcciones');
+        Schema::dropIfExists('venta');
     }
 }

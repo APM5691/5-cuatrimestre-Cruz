@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TipoDeJoya extends Migration
+class CreateMaterialTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class TipoDeJoya extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_de_joya', function (Blueprint $table) {
+        Schema::create('material', function (Blueprint $table) {
             $table->id();
-            $table->string ('tipo_joya',45);
+            $table->string('nombre', 200);
+            $table->string('tipo_material', 200);
             $table->timestamps();
         });
     }
+
+
 
     /**
      * Reverse the migrations.
@@ -27,7 +30,6 @@ class TipoDeJoya extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_de_joya');
-
+        Schema::dropIfExists('material');
     }
 }

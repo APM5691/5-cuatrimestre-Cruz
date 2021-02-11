@@ -15,8 +15,10 @@ class DetalleVenta extends Migration
     {
         Schema::create('detalle_venta', function (Blueprint $table) {
             $table->id();
-            $table->string ('detalle_venta',45)->conment('detalle_venta');
-            $table->string('ventas_id')->conment('ventas_id');
+            $table->string ('cantidad',45);
+            $table->string ('sub_total',45);
+            $table->integer('venta_id');
+            $table->integer('producto_id');
             $table->timestamps();
         });
     }
