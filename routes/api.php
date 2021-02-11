@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\AuthenticationException;
+use App\Http\Controllers\Api\UsuariosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,7 @@ Route::post('/tokens/create', function (Request $request) {
                 'token' => auth()->user()->createToken('test')->plainTextToken
         ];
 });
+
+Route::middleware('auth:sanctum')->group(function () {
+        Route::apiResource('usuarios', UsuariosController::class)->except(['create', 'edit']);
+        });
