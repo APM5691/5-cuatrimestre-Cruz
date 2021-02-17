@@ -2,13 +2,13 @@
 GET http://127.0.0.1:8000/api/usuarios HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 2|HPYltlCSe85zMFPSPfWA0Vt3UkpnyZCIpZp07Piu
+Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
 
 ## Crear usuario
 POST http://127.0.0.1:8000/api/usuarios HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 2|HPYltlCSe85zMFPSPfWA0Vt3UkpnyZCIpZp07Piu
+Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
 
 {
   "name":"Benito Pablo"
@@ -19,5 +19,29 @@ Authorization: Bearer 2|HPYltlCSe85zMFPSPfWA0Vt3UkpnyZCIpZp07Piu
   , "perfil":"Operador"
   , "estatus":"Activo"
   , "email":"benito.pablo@correo.com"
+  , "password":"123456789"
+}
+
+## Eliminar 1 usuario
+DELETE http://127.0.0.1:8000/api/usuarios/5 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
+
+## Actualizar 1 usuario
+PUT http://127.0.0.1:8000/api/usuarios/7 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
+
+{
+  "name":"Wendy"
+  , "primer_apellido":"Laureano"
+  , "segundo_apellido":"Aviles"
+  , "fecha_nacimiento":"1806-03-21"
+  , "sexo":"Masculino"
+  , "perfil":"Operador"
+  , "estatus":"Activo"
+  , "email":"al221910@gmail.com"
   , "password":"123456789"
 }
