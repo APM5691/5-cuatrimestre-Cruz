@@ -6,6 +6,7 @@ use App\DireccionesModel;
 use App\UsuariosModel;
 use App\ProductosModel;
 use App\Http\Controllers\Controller;
+use App\Models\Cliente;
 use App\VentasModel;
 use Illuminate\Http\Request;
 use App\Models\Producto;
@@ -61,16 +62,19 @@ class SistemController extends Controller
     
         \Storage::disk('local')->put($img, \File::get($file));
     
-         $usu = UsuariosModel::create(array(
-            'img' => $img,
-            'nombre'     =>$request->input('nombre'),
-            'email'      =>$request->input('email'),
-            'app'        =>$request->input('app'),
-            'apm'        =>$request->input('apm'),
-            'pass'       =>$request->input('pass'),
-            'tel'        =>$request->input('tel'),
-            'matricula'  =>$request->input('matricula'),
-            'fn'         =>$request->input('fn')
+         $usu = Cliente::create(array(
+
+        'imagen'=> $img,
+        'nombre_cliente'  =>$request->input('nombre_cliente'),
+        'primer_apellido' =>$request->input('primer_apellido'),
+        'segundo_apellido' =>$request->input('segundo_apellido'),
+        'password' =>$request->input('password'),
+        'correo_electronico' =>$request->input('correo_electronico'),
+        'telefono' =>$request->input('telefono'),
+        'sexo' =>$request->input('sexo'),
+        'fecha_nacimiento' =>$request->input('fecha_nacimiento'),
+        'matricula' =>$request->input('matricula'),
+        
             
          ));
     

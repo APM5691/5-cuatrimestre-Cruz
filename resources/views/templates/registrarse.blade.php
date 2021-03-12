@@ -30,43 +30,58 @@
 
 					{{ csrf_field() }}
 
-					{{-- Fecha de nacimiento : <input type="date" name="fn">
-					@if($errors->first('fn')) <i>{{$errors -> first ('fn')}}</i>@endif --}}
+					Fecha de nacimiento : <input type="date" name="fecha_nacimiento">
+					@if($errors->first('fecha_nacimiento')) <i>{{$errors -> first ('fecha_nacimiento')}}</i>@endif
 
 					<div>
 						Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
 					</div>
 					@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif
 					<div>
-						Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
+						Nombre : <input type="text" name="nombre_cliente" value="{{ old('nombre_cliente')}}">
 					</div>
-					@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
+					@if($errors->first('nombre_cliente')) <i>{{$errors -> first ('nombre_cliente')}}</i>@endif
 
 					<div>
-						Email : <input type="text" name="email" value="{{ old('email')}}"><br>
+						Email : <input type="text" name="correo_electronico" value="{{ old('correo_electronico')}}"><br>
 					</div>
-					@if($errors->first('email')) <i>{{$errors -> first ('email')}}</i>@endif
+					@if($errors->first('correo_electronico')) <i>{{$errors -> first ('correo_electronico')}}</i>@endif
 
 					<div>
-						Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
+						Apellido Paterno : <input type="text" name="primer_apellido" value="{{ old('primer_apellido')}}"><br>
 					</div>
-					@if($errors->first('app')) <i>{{$errors -> first ('app')}}</i>@endif
+					@if($errors->first('primer_apellido')) <i>{{$errors -> first ('primer_apellido')}}</i>@endif
 
 					<div>
-						Apellido Materno : <input type="text" name="apm" value="{{ old('apm')}}"><br>
+						Apellido Materno : <input type="text" name="segundo_apellido" value="{{ old('segundo_apellido')}}"><br>
 					</div>
-					@if($errors->first('apm')) <i>{{$errors -> first ('apm')}}</i>@endif
+					@if($errors->first('segundo_apellido')) <i>{{$errors -> first ('segundo_apellido')}}</i>@endif
 					<div>
-						Password : <input type="text" name="pass" value="{{ old('pass')}}"><br>
+						Password : <input type="text" name="password" value="{{ old('password')}}"><br>
 					</div>
-					@if($errors->first('pass')) <i>{{$errors -> first ('pass')}}</i>@endif
+					@if($errors->first('password')) <i>{{$errors -> first ('password')}}</i>@endif
 					<div>
-						Telefono : <input type="text" name="tel" value="{{ old('tel')}}"><br>
-						@if($errors->first('tel')) <i>{{$errors -> first ('tel')}}</i>@endif
+						Telefono : <input type="text" name="telefono" value="{{ old('telefono')}}"><br>
+						@if($errors->first('telefono')) <i>{{$errors -> first ('telefono')}}</i>@endif
 					</div>
-					Imagen : <input type="file" name="img"><br>
-					<hr>
+					
+					
 
+					<div class="form-group"> 
+						
+						<label for="sexo">Sexo :</label>
+						<select class="form-control" name="sexo">
+						  <option value="Desconocido">Selecciona una opcion</option>
+						  <option value="Hombre">Hombre</option>
+						  <option value="Mujer">Mujer</option>
+						  <option value="Desconocido">Desconocido</option>
+						</select>
+					  </div>
+
+					  <div class="form-group"> 
+					  Imagen : <input type="file" name="img">
+					</div>
+<hr>
 					<input type="submit" value="Enviar">
 				</form>
 
