@@ -1,0 +1,16 @@
+Angel:
+
+Pagina principal
+
+
+Catalogo de productos
+
+--Registro de productos
+
+
+Inicio de sesion
+
+--Registro de usuarios
+
+
+<<--------------------->

@@ -1,0 +1,48 @@
+## Obtener productos
+GET http://127.0.0.1:8000/api/productos HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 5|b5LWCda2ah0UXcwuIxTwsIf6rhbPmJh6CEJILEIF
+
+## Crear producto 
+POST http://127.0.0.1:8000/api/productos HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6|e6bXlr4Bjba6KKvBGbF55ZAQgdreqJNQumJoTbfT
+
+{
+    "clave": "1g45435",
+    "nombre_producto": "Anillo de oro",
+    "numero_existencias": 12,
+    "precio": 1200.1,
+    "descripcion": "Ninguna",
+    "medida": "pequeña",
+    "precio_oferta": 1100.0,
+    "foto_original": "--",
+    "foto": "--",
+    "tipo_de_joya_id": 1,
+}
+
+## Eliminar 1 usuario
+DELETE http://127.0.0.1:8000/api/usuarios/5 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
+
+## Actualizar 1 usuario
+PUT http://127.0.0.1:8000/api/usuarios/7 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
+
+{
+  "name":"Wendy"
+  , "primer_apellido":"Laureano"
+  , "segundo_apellido":"Aviles"
+  , "fecha_nacimiento":"1806-03-21"
+  , "sexo":"Masculino"
+  , "perfil":"Operador"
+  , "estatus":"Activo"
+  , "email":"al221910@gmail.com"
+  , "password":"123456789"
+}

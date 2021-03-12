@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\AuthenticationException;
 use App\Http\Controllers\Api\UsuariosController;
-
+use App\Http\Controllers\Api\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,8 @@ use App\Http\Controllers\Api\UsuariosController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         return $request->user();
 });
+
+
 Route::post('/tokens/create', function (Request $request) {
         $request->validate([
                 'email' => 'required|email', 'password' => 'required'
@@ -36,8 +38,6 @@ Route::post('/tokens/create', function (Request $request) {
 
 Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('usuarios', UsuariosController::class)->except(['create', 'edit']);
+        Route::apiResource('productos', ProductosController::class)->except(['create', 'edit']);
 });
 
-Route::middleware('auth:sanctum')->group(function () {
-        Route::apiResource('usuarios/{id}', UsuariosController::class);
-});
