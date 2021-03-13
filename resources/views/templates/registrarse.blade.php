@@ -66,6 +66,10 @@
 					</div>
 					
 					
+					<div class="form-group"> 
+						<input type="hidden" name="tipo_sesion" value="0">
+					</div>
+					
 
 					<div class="form-group"> 
 						
@@ -79,7 +83,7 @@
 					  </div>
 
 					  <div class="form-group"> 
-					  Imagen : <input type="file" name="img">
+					  Imagen : <input type="file" name="imagen">
 					</div>
 <hr>
 					<input type="submit" value="Enviar">

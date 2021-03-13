@@ -1,16 +1,19 @@
 Angel:
 
-Pagina principal
+--Pagina principal
 
-
-Catalogo de productos
-
+<- Como subir Imagenes al servidor->
+--Catalogo de productos
 --Registro de productos
-
-
-Inicio de sesion
+<-__->
 
 --Registro de usuarios
+--Inicio de sesion
+--Ver perfil
+--Log out
+
+Modificar productos
+Eliminar productos
 
 
 <<--------------------->

@@ -14,11 +14,11 @@
 
 		<a href="{{ route ('logout')}}" class="button big">Log Out</a>
 
-		@if (count(Cart::getContent()))
+		
 
 		<a href="{{route('carrito')}}" class="button big"> VER CARRITO </a>
 
-		@endif
+		
 
 		@else
 		<h1></h1>

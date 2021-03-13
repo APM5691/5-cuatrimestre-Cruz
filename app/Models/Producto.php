@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
@@ -28,8 +27,7 @@ class Producto extends Model
         'descripcion',
         'medida',
         'precio_oferta',
-        'foto_original',
-        'foto',
+        'fotografia',
         'tipo_de_joya_id'
     ];
 

@@ -30,16 +30,24 @@
 
 					{{ csrf_field() }}
 
+					<div class="form-group"> 
+						<input type="hidden" name="tipo_de_joya_id" value="0">
+					</div>
+
+					<div style="padding: 1%;">
+						Clave Del Producto : <input type="text" name="clave" value="{{ old('clave')}}">
+					</div>
+					@if($errors->first('clave')) <i>{{$errors -> first ('clave')}}</i>@endif
+
 					<div style="padding: 1%;">
 						Nombre Del Producto : <input type="text" name="nombre_producto" value="{{ old('nombre_producto')}}">
 					</div>
 					@if($errors->first('nombre_producto')) <i>{{$errors -> first ('nombre_producto')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Numero de existencias : <input type="number" name="no_existencias" value="{{ old('no_existencias')}}">
+						Numero de existencias : <input type="number" name="numero_existencias" value="{{ old('numero_existencias')}}">
 					</div>
-					@if($errors->first('no_existencias')) <i>{{$errors -> first ('no_existencias')}}</i>@endif
-					
+					@if($errors->first('numero_existencias')) <i>{{$errors -> first ('numero_existencias')}}</i>@endif
 
 					<div style="padding: 1%;">
 						Precio : <input type="number" name="precio"><br>
@@ -47,7 +55,6 @@
 					@if($errors->first('precio')) <i>{{$errors -> first ('precio')}}</i>@endif
 
 					<div style="padding: 1%;">
-					<!-- como cambiar el tamaño -->
 						Descripcion : <input type="textarea" name="descripcion" value="{{ old('descripcion')}}"><br>
 					</div>
 					@if($errors->first('descripcion')) <i>{{$errors -> first ('descripcion')}}</i>@endif
@@ -57,13 +64,13 @@
 					</div>
 					@if($errors->first('medida')) <i>{{$errors -> first ('medida')}}</i>@endif
 
+
 					<div style="padding: 1%;">
 						Precio oferta : <input type="number" name="precio_oferta"><br>
 					</div>
 					@if($errors->first('precio_oferta')) <i>{{$errors -> first ('precio_oferta')}}</i>@endif
 					
-					Imagen : <input type="file" name="img"><br>
-
+					Imagen : <input type="file" name="fotografia"><br>
 					<hr>
 					<!--*Genero : <input type="text" name="gen"><br>
 
@@ -85,3 +92,22 @@ Grupo : <input type="text" name="grupo"><br>
 </body>
 
 </html>
+
+nombre_producto--
+no_existencias--
+precio--
+descripcion--
+medida--
+precio_oferta--
+img--
+
+tipo_de_joya_id
+clave
+nombre_producto
+numero_existencias
+precio
+descripcion
+medida
+precio_oferta
+fotografia
+

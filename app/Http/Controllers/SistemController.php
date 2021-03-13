@@ -16,7 +16,7 @@ class SistemController extends Controller
 {
     public function login()
     {
-    
+
         return  view("templates.login");
     }
 
@@ -35,113 +35,122 @@ class SistemController extends Controller
         return  view("templates.iniciar_sesion");
     }
 
-    public function catalogo(Request $request, $buscar=null)
+    public function catalogo(Request $request, $buscar = null)
     {
         $usus = Producto::paginate(9);
-        
+
         $orders = Producto::Buscar($request->get('buscar'))
-        ->orderBy('nombre');
+            ->orderBy('nombre');
         return  view("templates.catalogo")
-        ->with(['usus' => $usus])
-        ->with(['orders' => $orders]);
+            ->with(['usus' => $usus])
+            ->with(['orders' => $orders]);
     }
 
     public function usuarios()
     {
         $usus = UsuariosModel::all();
         return  view("templates.usuarios")
-        ->with(['usus' => $usus]);
+            ->with(['usus' => $usus]);
     }
 
-    public function guardar(Request $request){
+    public function guardar(Request $request)
+    {
 
-         
-        $file = $request ->file('img');
-        $img = $file -> getClientOriginalName();
+
+        $file = $request->file('imagen');
+        $img = $file->getClientOriginalName();
         // $img = $request -> file('img')->getClientOriginalName();
-    
+
         \Storage::disk('local')->put($img, \File::get($file));
-    
-         $usu = Cliente::create(array(
 
-        'imagen'=> $img,
-        'nombre_cliente'  =>$request->input('nombre_cliente'),
-        'primer_apellido' =>$request->input('primer_apellido'),
-        'segundo_apellido' =>$request->input('segundo_apellido'),
-        'password' =>$request->input('password'),
-        'correo_electronico' =>$request->input('correo_electronico'),
-        'telefono' =>$request->input('telefono'),
-        'sexo' =>$request->input('sexo'),
-        'fecha_nacimiento' =>$request->input('fecha_nacimiento'),
-        'matricula' =>$request->input('matricula'),
-        
-            
-         ));
-    
+        $usu = Cliente::create(array(
+
+            'imagen' => $img,
+            'nombre_cliente'  => $request->input('nombre_cliente'),
+            'primer_apellido' => $request->input('primer_apellido'),
+            'segundo_apellido' => $request->input('segundo_apellido'),
+            'password' => $request->input('password'),
+            'correo_electronico' => $request->input('correo_electronico'),
+            'telefono' => $request->input('telefono'),
+            'sexo' => $request->input('sexo'),
+            'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+            'matricula' => $request->input('matricula'),
+            'tipo_sesion' => $request->input('tipo_sesion'),
+
+        ));
+
         return redirect()->route('iniciar_sesion');
-
     }
 
-    public function modificar(UsuariosModel $id){
+    public function modificar(UsuariosModel $id)
+    {
         return view("templates.editar")
             ->with(['usu' => $id]);
     }
-    public function salvar(UsuariosModel $id, Request $request){
+    public function salvar(UsuariosModel $id, Request $request)
+    {
 
-             $id->update($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
+        $id->update($request->only('nombre', 'email', 'app', 'apm', 'pass', 'tel', 'matricula', 'fn'));
 
-            return redirect()->route('usuarios');
+        return redirect()->route('usuarios');
     }
 
-    public function borrar(UsuariosModel $id){
+    public function borrar(UsuariosModel $id)
+    {
         $id->delete();
         return redirect()->route('usuarios');
     }
 
 
 
-    public function guardarProductos(Request $request){
+    public function guardarProductos(Request $request)
+    {
 
-        
-        $file = $request->file('img');
-        
+
+        $file = $request->file('fotografia');
+
         $img = $file->getClientOriginalName();
         // $img = $request -> file('img')->getClientOriginalName();
-    
-        \Storage::disk('local')->put($img, \File::get($file));
-    
-         $usu = ProductosModel::create(array(
-            'img' => $img,
-            'nombre_producto'=>$request->input('nombre_producto'),
-            'no_existencias' =>$request->input('no_existencias'),
-            'precio' =>        $request->input('precio'),
-            'descripcion' =>   $request->input('descripcion'),
-            'medida' =>        $request->input('medida'),
-            'precio_oferta' => $request->input('precio_oferta')
-            
-         ));
-    
-        return redirect()->route('productos');
 
-        }
+        \Storage::disk('local')->put($img, \File::get($file));
+
+        $usu = Producto::create(array(
+            'fotografia' =>  $img,
+            'tipo_de_joya_id' => $request->input('tipo_de_joya_id'),
+            'clave' => $request->input('clave'),
+            'nombre_producto' => $request->input('nombre_producto'),
+            'numero_existencias' => $request->input('numero_existencias'),
+            'precio' => $request->input('precio'),
+            'descripcion' => $request->input('descripcion'),
+            'medida' => $request->input('medida'),
+            'precio_oferta' => $request->input('precio_oferta'),
+            
+
+        ));
+
+        return redirect()->route('productos');
+    }
 
     public function registrarProductos()
     {
         return  view("templates.registrar_productos");
     }
 
-    public function modificarProductos(ProductosModel $id){
+    public function modificarProductos(ProductosModel $id)
+    {
         return view("templates.editarProductos")
             ->with(['usu' => $id]);
     }
-    public function salvarProductos(ProductosModel $id, Request $request){
+    public function salvarProductos(ProductosModel $id, Request $request)
+    {
 
-             $id->update($request->only('nombre_producto','no_existencias', 'precio','descripcion','medida','precio_oferta'));
+        $id->update($request->only('nombre_producto', 'no_existencias', 'precio', 'descripcion', 'medida', 'precio_oferta'));
 
-            return redirect()->route('productos');
+        return redirect()->route('productos');
     }
 
-    public function borrarProducto(ProductosModel $id){
+    public function borrarProducto(ProductosModel $id)
+    {
         $id->delete();
         return redirect()->route('productos');
     }
@@ -150,79 +159,79 @@ class SistemController extends Controller
 
     public function productos()
     {
-        $usus = ProductosModel::all();
+        $usus = Producto::all();
         return  view("templates.productos")
-        ->with(['usus' => $usus]);
+            ->with(['usus' => $usus]);
     }
 
     public function carrito()
     {
         $usus = ProductosModel::all();
         return view('templates.carrito')
-        ->with(['usus' => $usus]);
+            ->with(['usus' => $usus]);
     }
 
-    public function addCarrito($id=null)
+    public function addCarrito($id = null)
     {
         $usus = ProductosModel::all();
         return view('templates.carrito')
-        ->with('id', $id)
-        ->with(['usus' => $usus]);
+            ->with('id', $id)
+            ->with(['usus' => $usus]);
     }
 
-    public function detalleProducto($id=null)
+    public function detalleProducto($id = null)
     {
         $usus = Producto::find($id);
         return view('templates.detalle_producto')
-        ->with('id', $id)
-        ->with(['usu' => $usus]);
+            ->with('id', $id)
+            ->with(['usu' => $usus]);
     }
 
     public function buscar(Request $request)
     {
-        
+
         $query = Producto::Buscar($request->get('buscar'))->paginate(3);
         // dd($query);
         return view("templates.catalogo")
-        ->with(['usus' => $query]);
-
+            ->with(['usus' => $query]);
     }
     public function reporte()
     {
-        
+
         return  view("templates.reporte_ventas");
-}
+    }
     public function detalleUsuario()
     {
-        $usus = UsuariosModel::all();
+        $usus = Cliente::all();
         return view('templates.detalle_usuario')
-        ->with(['usus' => $usus]);
+            ->with(['usus' => $usus]);
     }
 
-    public function mapa(){
+    public function mapa()
+    {
         Mapper::map(19.283295, -99.660684);
         return view('templates.mapa');
     }
 
 
 
-public function registrarDireccion($id=null,$cantidad=null)
-{
-    $usus = UsuariosModel::find($id);
-    $direccion = DireccionesModel::find($id);
-    $ventas = VentasModel::all();
-    $comps = UsuariosModel::all();
-    $todos = DireccionesModel::all();
+    public function registrarDireccion($id = null, $cantidad = null)
+    {
+        $usus = UsuariosModel::find($id);
+        $direccion = DireccionesModel::find($id);
+        $ventas = VentasModel::all();
+        $comps = UsuariosModel::all();
+        $todos = DireccionesModel::all();
 
-    $usu = VentasModel::create(array(
-        'monto_total'    => $cantidad,
-        'direcciones_id' => $direccion->clientes_id,
-        'clientes_id'    => $id,
-     ));
+        $usu = VentasModel::create(array(
+            'monto_total'    => $cantidad,
+            'direcciones_id' => $direccion->clientes_id,
+            'clientes_id'    => $id,
+        ));
 
-    return view('templates.ventas')
-    ->with(['usus' => $ventas])
-    ->with(['comps' => $comps])
-    ->with(['todos' => $todos]);
-}
+        return view('templates.ventas')
+            ->with(['usus' => $ventas])
+            ->with(['comps' => $comps])
+            ->with(['todos' => $todos]);
+    }
 }

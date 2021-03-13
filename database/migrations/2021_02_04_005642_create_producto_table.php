@@ -23,8 +23,7 @@ class CreateProductoTable extends Migration
             $table->string('descripcion', 200);
             $table->string('medida', 200);
             $table->decimal('precio_oferta', 10, 2);
-            $table->string('foto_original', 200);
-            $table->string('foto', 200);
+            $table->string('fotografia', 200);
             $table->timestamps();
         });
     }

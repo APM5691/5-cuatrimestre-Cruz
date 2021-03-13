@@ -47,13 +47,13 @@
 						<tbody>
 							<tr>
 								<td>{{ $usu->nombre_producto}}</td>
-								<td>{{ $usu->no_existencias}}</td>
+								<td>{{ $usu->numero_existencias}}</td>
 								<td>{{ $usu->precio }}</td>
 								<td>{{ $usu->descripcion}}</td>
 								<td>{{ $usu->medida }}</td>
 								<td>{{ $usu->precio_oferta}}</td>
-								<td><h3><a href="{{ route('modificarProductos', ['id' => $usu->id_producto]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3></td>
-								<td><h3><a href="{{ route('borrarProducto', ['id' => $usu->id_producto]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3></td>
+								<td><h3><a href="{{ route('modificarProductos', ['id' => $usu->id]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3></td>
+								<td><h3><a href="{{ route('borrarProducto', ['id' => $usu->id]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3></td>
 							
 
 							</tr>

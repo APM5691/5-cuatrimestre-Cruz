@@ -22,5 +22,6 @@ class Cliente extends Model
         'fecha_nacimiento',
         'matricula',
         'imagen',
+        'tipo_sesion'
         ];
 }

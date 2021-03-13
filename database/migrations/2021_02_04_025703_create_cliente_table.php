@@ -24,6 +24,8 @@ class CreateClienteTable extends Migration
             $table->string('password',45);
             $table->string('telefono',10);
             $table->string('sexo',45);
+            $table->string('imagen',45);
+            $table->integer('tipo_sesion');
 
             
             

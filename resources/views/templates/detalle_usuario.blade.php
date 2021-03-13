@@ -52,16 +52,16 @@
 
 				<div>
 				@foreach($usus as $usu)
-				@if($usu->id_usuario == session('session_id'))
+				@if($usu->id == session('session_id'))
 
 					<div class="card">
-						<img src="{{ asset('img/'.$usu->img) }}" alt="Imagen" width="200" height="200">
+						<img src="{{ asset('img/'.$usu->imagen) }}" alt="Imagen" width="200" height="200">
 						<div class="container">
-							Nombre : {{ $usu->nombre}} {{ $usu->app}} {{ $usu->apm}} <br>
+							Nombre : {{ $usu->nombre_cliente}} {{ $usu->primer_apellido}} {{ $usu->segundo_apellido}} <br>
 							Matricula {{ $usu->matricula}} <br>
-							Fecha de nacimiento: {{ $usu->fn }} <br>
-							Telefono: {{ $usu->tel}} <br>
-							Email: {{ $usu->email }} <br>
+							Fecha de nacimiento: {{ $usu->fecha_nacimiento }} <br>
+							Telefono: {{ $usu->telefono}} <br>
+							Email: {{ $usu->correo_electronico }} <br>
 							<br></br>
 							<a href="{{ route('home')}}" class="button big">Regresar al Inicio</a><br>
 

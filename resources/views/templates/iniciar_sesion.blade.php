@@ -40,13 +40,13 @@
 					{{ csrf_field() }}
 
 					<div>
-						Email : <input type="text" name="email"><br>
+						Email : <input type="text" name="correo_electronico"><br>
 					</div>
 					
-					@if($errors->first('email')) <i>{{$errors -> first ('email')}}</i>@endif
+					@if($errors->first('correo_electronico')) <i>{{$errors -> first ('correo_electronico')}}</i>@endif
 
 					<div>
-						Password : <input type="text" name="pass"><br>
+						Password : <input type="text" name="password"><br>
 					</div>
 					
 
