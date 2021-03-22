@@ -20,6 +20,7 @@ class Producto extends Model
     protected $table = 'producto';
 
     protected $fillable = [
+        'id',
         'clave',
         'nombre_producto',
         'numero_existencias',
@@ -28,12 +29,11 @@ class Producto extends Model
         'medida',
         'precio_oferta',
         'fotografia',
-        'tipo_de_joya_id'
     ];
 
     public function scopeBuscar($query,$buscar){
         if (trim($buscar != "")) {
             $query->where(\DB::raw("nombre_producto"), "LIKE", "%".$buscar."%");
         }
-        }
+     }
 }

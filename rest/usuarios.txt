@@ -11,15 +11,15 @@ Accept: application/json
 Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
 
 {
-  "name":"Benito Pablo"
-  , "primer_apellido":"Juárez"
-  , "segundo_apellido":"García"
+  "name":"Angel"
+  , "primer_apellido":"Palacios"
+  , "segundo_apellido":"Mirafuentes"
   , "fecha_nacimiento":"1806-03-21"
   , "sexo":"Masculino"
   , "perfil":"Operador"
   , "estatus":"Activo"
-  , "email":"benito.pablo@correo.com"
-  , "password":"123456789"
+  , "email":"administrador@correo.com"
+  , "password":"12345678"
 }
 
 ## Eliminar 1 usuario

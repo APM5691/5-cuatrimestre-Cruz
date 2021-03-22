@@ -13,16 +13,17 @@ class CreateProductoTable extends Migration
      */
     public function up()
     {
+        //cambiar a productos
         Schema::create('producto', function (Blueprint $table) {
             $table->id();
             $table->integer('tipo_de_joya_id');
             $table->string('clave', 25);
             $table->string('nombre_producto', 200);
-            $table->unsignedInteger('numero_existencias');
-            $table->decimal('precio', 10, 2);
+            $table->Integer('numero_existencias');
+            $table->integer('precio');
             $table->string('descripcion', 200);
             $table->string('medida', 200);
-            $table->decimal('precio_oferta', 10, 2);
+            $table->integer('precio_oferta');
             $table->string('fotografia', 200);
             $table->timestamps();
         });

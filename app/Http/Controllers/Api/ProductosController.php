@@ -38,7 +38,16 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'clave' => 'required|string',
+            'nombre_producto' => 'required|string|max:25',
+            'numero_existencias' => 'required',
+            'precio' => 'required',
+            'descripcion' => 'required',
+            'medida' => 'required',
+            'precio_oferta' => 'required',
+            'fotografia' => 'required'
+        ]);
         $producto = Producto::create($request->all());
         return new ProductoResource($producto);
     }
@@ -74,7 +83,28 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'clave' => 'required|string',
+            'nombre_producto' => 'required|string|max:25',
+            'numero_existencias' => 'required',
+            'precio' => 'required',
+            'descripcion' => 'required',
+            'medida' => 'required',
+            'precio_oferta' => 'required',
+            'fotografia' => 'required'
+        ]);
+        $producto = Producto::findOrfail($id);
+        $producto->update($request->only([
+            'clave',
+            'nombre_producto',
+            'numero_existencias',
+            'precio',
+            'descripcion',
+            'medida',
+            'precio_oferta',
+            'fotografia'
+            ]));
+            return new ProductoResource($producto);
     }
 
     /**
@@ -85,6 +115,7 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Producto::findOrfail($id)->delete();
+        return ['estatus' => true];
     }
 }

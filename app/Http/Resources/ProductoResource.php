@@ -23,9 +23,8 @@ class ProductoResource extends JsonResource
                 'descripcion' => $this->descripcion  ,
                 'medida' => $this->medida  ,
                 'precio_oferta' => $this->precio_oferta  ,
-                'foto_original' => $this->foto_original  ,
-                'foto' => $this->foto ,
-                'tipo_de_joya_id' => $this->tipo_de_joya_id  
+                'fotografia' => $this->fotografia 
+                // 'tipo_de_joya_id' => $this->tipo_de_joya_id  
         ];
     }
 }
