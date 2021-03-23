@@ -1,33 +1,33 @@
-## Obtener productos
-GET http://127.0.0.1:8000/api/productos HTTP/1.1
+## Obtener tipo de joya
+GET http://127.0.0.1:8000/api/tipo_de_joya HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
-## Crear producto 
-POST http://127.0.0.1:8000/api/productos HTTP/1.1
+## Crear tipo de joya 
+POST http://127.0.0.1:8000/api/tipo_de_joya HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
 {
-   
+    "tipo_joya":"Collar"
 }
 
-## Eliminar 1 usuario
-DELETE http://127.0.0.1:8000/api/productos/3 HTTP/1.1
+## Eliminar 1 tipo de joya
+DELETE http://127.0.0.1:8000/api/tipo_de_joya/3 HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
-## Actualizar 1 usuario
-PUT http://127.0.0.1:8000/api/productos/2 HTTP/1.1
+## Actualizar 1 tipo de joya
+PUT http://127.0.0.1:8000/api/tipo_de_joya/3 HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
 {
-  
+  "tipo_joya":"Collar de perlas"
 }
 
 

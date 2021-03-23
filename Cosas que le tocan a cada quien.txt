@@ -44,10 +44,10 @@ Eliminar productos
 3.las tablas en BD(plural?)
 
 a.controlador
-php artisan make:controller VentasController --resource
+php artisan make:controller Api/--Controller --resource
 b.collection
 duplicar la collection
 c.modelo
-php artisan make:model Article
+php artisan make:model --
 d.resource
-php artisan make:resource UserResource
+php artisan make:resource --Resource

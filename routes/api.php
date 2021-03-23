@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UsuariosController;
 use App\Http\Controllers\Api\ProductosController;
 use App\Http\Controllers\Api\VentasController;
 use App\Http\Controllers\Api\MaterialesController;
+use App\Http\Controllers\Api\TipoDeJoyaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +44,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('productos', ProductosController::class)->except(['create', 'edit']);
         Route::apiResource('ventas', VentasController::class)->except(['create', 'edit']);
         Route::apiResource('materiales', MaterialesController::class)->except(['create', 'edit']);
+        Route::apiResource('tipo_de_joya',  TipoDeJoyaController::class)->except(['create', 'edit']);
 });
 
