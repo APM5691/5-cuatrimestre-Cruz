@@ -1,32 +1,43 @@
-## Obtener productos
-GET http://127.0.0.1:8000/api/productos HTTP/1.1
+## Obtener direcciones
+GET http://127.0.0.1:8000/api/direcciones HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
-## Crear producto 
-POST http://127.0.0.1:8000/api/productos HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
-
-{
-   
-}
-
-## Eliminar 1 usuario
-DELETE http://127.0.0.1:8000/api/productos/3 HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
-
-## Actualizar 1 usuario
-PUT http://127.0.0.1:8000/api/productos/2 HTTP/1.1
+## Crear 1 direccion
+POST http://127.0.0.1:8000/api/direcciones HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
 {
-  
+   "clientes_id": 12,
+   "calle": "independencia",
+   "numero": 127,
+   "localidad": "ninguna",
+   "municipio": "ninguno",
+   "estado":  "mexico"
 }
 
+## Eliminar 1 direccion
+DELETE http://127.0.0.1:8000/api/direcciones/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+## Actualizar 1 direccion
+PUT http://127.0.0.1:8000/api/direcciones/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+{
+   "clientes_id": 12,
+   "calle": "independencia",
+   "numero": 127,
+   "localidad": "ninguna",
+   "municipio": "ninguno",
+   "estado":  "bolivia"
+}
+
+<- Listo ->
