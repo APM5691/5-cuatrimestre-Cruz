@@ -13,9 +13,10 @@ class CreateVentaTable extends Migration
      */
     public function up()
     {
+        //ventas
         Schema::create('venta', function (Blueprint $table) {
             $table->id();
-               $table->float('monto_total', 8, 2);
+               $table->integer('monto_total');
                $table->integer('direcciones_id');
                $table->integer('clientes_id');
                $table->timestamps();

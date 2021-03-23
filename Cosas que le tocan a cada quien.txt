@@ -17,3 +17,37 @@ Eliminar productos
 
 
 <<--------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. se borra lo que ingresas al formulario al actualizar la pantalla
+2. la pantalla principal no logra desplazarse abajo
+3.las tablas en BD(plural?)
+
+a.controlador
+php artisan make:controller VentasController --resource
+b.collection
+duplicar la collection
+c.modelo
+php artisan make:model Article
+d.resource
+php artisan make:resource UserResource

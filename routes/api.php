@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\AuthenticationException;
 use App\Http\Controllers\Api\UsuariosController;
 use App\Http\Controllers\Api\ProductosController;
+use App\Http\Controllers\Api\VentasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,6 @@ Route::post('/tokens/create', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('usuarios', UsuariosController::class)->except(['create', 'edit']);
         Route::apiResource('productos', ProductosController::class)->except(['create', 'edit']);
+        Route::apiResource('ventas', VentasController::class)->except(['create', 'edit']);
 });
 

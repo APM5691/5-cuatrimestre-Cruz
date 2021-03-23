@@ -1,0 +1,38 @@
+## Obtener ventas
+GET http://127.0.0.1:8000/api/ventas HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+## Crear venta
+POST http://127.0.0.1:8000/api/ventas HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+{
+   "monto_total":5200,
+   "direcciones_id":3,
+   "clientes_id":3
+}
+
+## Eliminar 1 venta
+DELETE http://127.0.0.1:8000/api/ventas/3 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+## Actualizar 1 venta
+PUT http://127.0.0.1:8000/api/ventas/2 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+{
+   "monto_total":5200,
+   "direcciones_id":3,
+   "clientes_id":3
+}
+
+
+//listo
