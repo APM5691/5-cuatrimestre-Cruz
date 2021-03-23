@@ -1,32 +1,39 @@
-## Obtener productos
-GET http://127.0.0.1:8000/api/productos HTTP/1.1
+## Obtener detalle ventas
+GET http://127.0.0.1:8000/api/detalle_ventas HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
-## Crear producto 
-POST http://127.0.0.1:8000/api/productos HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
-
-{
-    
-}
-
-## Eliminar 1 usuario
-DELETE http://127.0.0.1:8000/api/productos/3 HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
-
-## Actualizar 1 usuario
-PUT http://127.0.0.1:8000/api/productos/2 HTTP/1.1
+## Crear detalle venta 
+POST http://127.0.0.1:8000/api/detalle_ventas HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
 {
-   
+     "cantidad" : "112",                   
+     "sub_total" : "112",                  
+     "venta_id" : 125,                  
+     "producto_id" : 112
 }
 
+## Eliminar 1 detalle venta
+DELETE http://127.0.0.1:8000/api/detalle_ventas/3 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+## Actualizar 1 detalle venta
+PUT http://127.0.0.1:8000/api/detalle_ventas/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
+
+{
+     "cantidad" : "1",                   
+     "sub_total" : "1",                  
+     "venta_id" : 1,                  
+     "producto_id" : 1
+}
+
+<- Listo ->

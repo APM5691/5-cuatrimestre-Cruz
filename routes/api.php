@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\DetallesMaterialesController;
+use App\Http\Controllers\Api\DetallesVentasController;
 use App\Http\Controllers\Api\DireccionesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -49,5 +50,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('tipo_de_joya',  TipoDeJoyaController::class)->except(['create', 'edit']);
         Route::apiResource('detalle_material', DetallesMaterialesController::class)->except(['create', 'edit']);
         Route::apiResource('direcciones', DireccionesController::class)->except(['create', 'edit']);
+        Route::apiResource('detalle_ventas', DetallesVentasController::class)->except(['create', 'edit']);
 });
 

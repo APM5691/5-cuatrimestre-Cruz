@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\DetalleMaterialCollection;
-use App\Http\Resources\DetalleMaterialResource;
-use App\Models\DetalleMaterial;
+use App\Http\Resources\DetalleVentaCollection;
+use App\Http\Resources\DetalleVentaResource;
+use App\Models\DetalleVenta;
 use Illuminate\Http\Request;
 
-class DetallesMaterialesController extends Controller
+class DetallesVentasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class DetallesMaterialesController extends Controller
      */
     public function index()
     {
-        return new DetalleMaterialCollection(DetalleMaterial::all());
+        return new DetalleVentaCollection(DetalleVenta::all());
     }
 
     /**
@@ -38,14 +38,14 @@ class DetallesMaterialesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([                  
-        'material_principal' => 'required',                   
-        'material_secundario' => 'required',                  
-        'material_id' => 'required',                  
-        'producto_id' => 'required', 
-        ]);
-        $detalle_material = DetalleMaterial::create($request->all());
-        return new DetalleMaterialResource($detalle_material);
+        $request->validate([                         
+            'cantidad' => 'required',                   
+            'sub_total' => 'required',                  
+            'venta_id' => 'required',                  
+            'producto_id' => 'required', 
+            ]);
+            $detalle_venta = DetalleVenta::create($request->all());
+            return new DetalleVentaResource($detalle_venta);
     }
 
     /**
@@ -80,19 +80,19 @@ class DetallesMaterialesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'material_principal' => 'required',                   
-            'material_secundario' => 'required',                  
-            'material_id' => 'required',                  
+            'cantidad' => 'required',                   
+            'sub_total' => 'required',                  
+            'venta_id' => 'required',                  
             'producto_id' => 'required', 
         ]);
-        $detalle_material = DetalleMaterial::findOrfail($id);
-        $detalle_material->update($request->only([
-            'material_principal',                   
-            'material_secundario',                  
-            'material_id',                  
+        $detalle_venta = DetalleVenta::findOrfail($id);
+        $detalle_venta->update($request->only([
+            'cantidad',                   
+            'sub_total',                  
+            'venta_id',                  
             'producto_id', 
             ]));
-            return new DetalleMaterialResource($detalle_material);
+            return new DetalleVentaResource($detalle_venta);
     }
 
     /**
@@ -103,7 +103,7 @@ class DetallesMaterialesController extends Controller
      */
     public function destroy($id)
     {
-        DetalleMaterial::findOrfail($id)->delete();
+        DetalleVenta::findOrfail($id)->delete();
         return ['estatus' => true];
     }
 }
