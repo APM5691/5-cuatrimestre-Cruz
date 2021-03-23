@@ -11,14 +11,7 @@ Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
 {
-    "clave": "1g45435",
-    "nombre_producto": "Anillo de oro",
-    "numero_existencias": 12,
-    "precio": 1200.1,
-    "descripcion": "Ninguna",
-    "medida": "pequeña",
-    "precio_oferta": 1100.0,
-    "fotografia": "--" 
+   
 }
 
 ## Eliminar 1 usuario
@@ -34,15 +27,7 @@ Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
 {
-   "clave": "GYU3456IO3546B657896",
-    "nombre_producto": "Collar",
-    "numero_existencias": 12,
-    "precio": 1200.1,
-    "descripcion": "Ninguna",
-    "medida": "pequeña",
-    "precio_oferta": 1100.0,
-    "fotografia": "http://lorempixel.com/640/480/technics" 
+  
 }
 
 
-//listo
