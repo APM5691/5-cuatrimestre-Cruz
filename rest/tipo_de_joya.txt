@@ -30,4 +30,4 @@ Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
   "tipo_joya":"Collar de perlas"
 }
 
-
+<- Listo ->
