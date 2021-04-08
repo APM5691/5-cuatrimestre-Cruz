@@ -72,25 +72,6 @@
 				</div>
 
 
-
-				<!-- <div id="">
-					<div class=""></div>
-					<h1>
-						
-					</h1>
-					<div class="">
-
-					 <br>
-						
-						 <br>
-						{{ $usu->pass }} <br>
-						{{ $usu->img }} <br>
-						{{ $usu->id_grupo }} <br>
-						{{ $usu->id_tipo}} <br>
-						{{ $usu->activo }} <br>
-					</div>
-				</div> -->
-
 			</div>
 		</div>
 
