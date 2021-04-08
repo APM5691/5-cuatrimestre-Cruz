@@ -40,7 +40,7 @@ Eliminar productos
 
 
 1. se borra lo que ingresas al formulario al actualizar la pantalla
-2. la pantalla principal no logra desplazarse abajo
+
 3.las tablas en BD(plural?)
 
 a.controlador

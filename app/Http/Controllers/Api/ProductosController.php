@@ -48,7 +48,7 @@ class ProductosController extends Controller
             'precio_oferta' => 'required',
             'fotografia' => 'required'
         ]);
-        $producto = Producto::create($request->all());
+        $producto = Producto::create($request->except('id'));
         return new ProductoResource($producto);
     }
 

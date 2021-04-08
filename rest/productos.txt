@@ -10,6 +10,18 @@ Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|LhfOpXkRqOHUlx6XTW2nhPPaXoCHp8kXIRaKy3No
 
+{  
+    
+    "clave": "HGKL678BHH",
+    "nombre_producto": "Cadena",
+    "numero_existencias": 300,
+    "precio": 1200,
+    "descripcion": "Cadena de oro",
+    "medida": "Pequeño",
+    "precio_oferta": 1000,
+    "fotografia": "img"
+}
+
 {
     "clave": "1g45435",
     "nombre_producto": "Anillo de oro",

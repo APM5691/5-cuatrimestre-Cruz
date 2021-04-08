@@ -11,6 +11,8 @@ use App\VentasModel;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use Mapper;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class SistemController extends Controller
 {
@@ -55,10 +57,11 @@ class SistemController extends Controller
 
     public function guardar(Request $request)
     {
-        $file = $request->file('imagen');
-        $img = $file->getClientOriginalName();
+ 
+        $img = $request->file('imagen')->getClientOriginalName();
 
-       $request->file('imagen')->store('imagenes');
+        Storage::putFile('imagen', $request->file($img));
+
 
         $usu = Cliente::create(array(
 
