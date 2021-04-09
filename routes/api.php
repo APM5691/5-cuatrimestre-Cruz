@@ -48,7 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('ventas', VentasController::class)->except(['create', 'edit']);
         Route::apiResource('materiales', MaterialesController::class)->except(['create', 'edit']);
         Route::apiResource('direcciones', DireccionesController::class)->except(['create', 'edit']);
-
+falta
         Route::apiResource('tipo_de_joya',  TipoDeJoyaController::class)->except(['create', 'edit']);
         Route::apiResource('detalle_material', DetallesMaterialesController::class)->except(['create', 'edit']);
         Route::apiResource('detalle_ventas', DetallesVentasController::class)->except(['create', 'edit']);
