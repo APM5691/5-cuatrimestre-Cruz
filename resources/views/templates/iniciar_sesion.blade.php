@@ -11,6 +11,7 @@
 	<title>Inicio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
 	<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
 
 </head>
@@ -56,8 +57,9 @@
 
 				@else
                 <div class="alinear">
-				<h1>Hola {{session('session_name')}}</h1>
+				<h1 data-name="{{session('session_name')}}" class="name">Hola {{session('session_name')}}</h1>
 				<h1>Ya estas Logeado, Ve a comprar algunas joyas.</h1>
+				
 				</div>
 
 				@endif
@@ -70,6 +72,24 @@
 	</div>
 
 	@include ('layouts.footer')
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	 @if(!empty(session('session_id')))
+	 <style type="text/css">
+	 	.swal-button{
+	 		background-color: #e04e32 !important;
+	 		padding: 0 20px !important;
+	 	}
+	 	 button{
+	 		color:white !important;
+	 	}
+	 </style>
+	 <script type="text/javascript">
+          name=$('.name').data('name');
+          
+				swal("Bienvenido "+name+" !","","success",{button:"OK",});
+                </script>
+                @endif
 
 </body>
 

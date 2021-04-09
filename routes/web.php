@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\ExcelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -130,3 +132,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+//PDF
+
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
+
+//Excel
+
+Route::get('export', [ExcelController::class, 'export'])->name('export');
