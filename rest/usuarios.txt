@@ -8,19 +8,19 @@ Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
 POST http://127.0.0.1:8000/api/usuarios HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 4|Ee8vZ76p9zkM90MpX92dUs8bfyJWFBcanTbw9XTn
+Authorization: Bearer 15|4M2WA61BLnGfn7JusatjgRTtwSVLinfP8WToZ7Ms
 
-{
-  "name":"Angel"
-  , "primer_apellido":"Palacios"
-  , "segundo_apellido":"Mirafuentes"
-  , "fecha_nacimiento":"1806-03-21"
-  , "sexo":"Masculino"
-  , "perfil":"Operador"
-  , "estatus":"Activo"
-  , "email":"administrador@correo.com"
-  , "password":"12345678"
-}
+{ "name": "asda"
+  ,"email": "angel@hotmail.com"
+  ,"primer_apellido": "sda"
+  ,"segundo_apellido": "da"
+  ,"fotografia": "asd"
+  ,"sexo": "Masculino"
+  ,"fecha_nacimiento": "1806-03-21"
+  ,"perfil": "Operador"
+  ,"estatus": "Activo"
+  ,"password": "angel123456"
+  }
 
 ## Eliminar 1 usuario
 DELETE http://127.0.0.1:8000/api/usuarios/5 HTTP/1.1

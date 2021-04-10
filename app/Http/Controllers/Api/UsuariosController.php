@@ -39,7 +39,7 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:25', 'primer_apellido' => 'required|string|max:25', 'segundo_apellido' => 'bail|nullable|string|max:25', 'fecha_nacimiento' => 'required|date_format:Y-m-d', 'sexo' => 'required|in:Femenino,Masculino,Prefiere no decirlo', 'perfil' => 'required|in:Administrador,Operador,Mecánico', 'estatus' => 'required|in:Activo,Inactivo', 'email' => 'required|email|unique:users,email', 'password' => 'required|min:8'
+            'name' => 'required|string|max:25','fotografia' =>'required|string', 'primer_apellido' => 'required|string', 'segundo_apellido' => 'bail|nullable|string|max:25', 'fecha_nacimiento' => 'required|date_format:Y-m-d', 'sexo' => 'required|in:Femenino,Masculino,Prefiere no decirlo', 'perfil' => 'required|in:Administrador,Operador,Mecánico', 'estatus' => 'required|in:Activo,Inactivo', 'email' => 'required|email|unique:users,email', 'password' => 'required|min:8'
         ]);
         $request->merge(['password' => bcrypt($request->password)]);
         $usuario = User::create($request->all());
@@ -79,7 +79,7 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string|max:25', 'primer_apellido' => 'required|string|max:25', 'segundo_apellido' => 'bail|nullable|string|max:25', 'fecha_nacimiento' => 'required|date_format:Y-m-d', 'sexo' => 'required|in:Femenino,Masculino,Prefiere no decirlo', 'perfil' => 'required|in:Administrador,Operador,Mecánico', 'estatus' => 'required|in:Activo,Inactivo', 'email' => 'required|email|unique:users,email', 'password' => 'required|min:8'
+            'name' => 'required|string|max:25','fotografia' =>'required|string', 'primer_apellido' => 'required|string|max:25', 'segundo_apellido' => 'bail|nullable|string|max:25', 'fecha_nacimiento' => 'required|date_format:Y-m-d', 'sexo' => 'required|in:Femenino,Masculino,Prefiere no decirlo', 'perfil' => 'required|in:Administrador,Operador,Mecánico', 'estatus' => 'required|in:Activo,Inactivo', 'email' => 'required|email|unique:users,email', 'password' => 'required|min:8'
         ]);
         $usuario = User::findOrfail($id);
         $request->merge(['password' => $request->password  ? bcrypt($request->password) :  $usuario->password]);
@@ -92,7 +92,8 @@ class UsuariosController extends Controller
                 'perfil',
                 'estatus',
                 'email',
-                'password'
+                'password',
+                'fotografia'
             ]));
             return new UserResource($usuario);
     }

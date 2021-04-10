@@ -24,6 +24,7 @@ class UserResource extends JsonResource
             , 'estatus' => $this->estatus
             , 'perfil' => $this->perfil
             , 'email' => $this->email
+            , 'fotografia' => $this->fotografia
             ];
             
     }

@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('estatus', ['Activo', 'Inactivo'])->comment('Estatus');
             $table->enum('perfil', ['Administrador', 'Operador', 'Mecánico'])->comment('Perfil');
             $table->string('email')->unique();
+            $table->string('fotografia');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
