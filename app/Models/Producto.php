@@ -8,8 +8,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Jenssegers\Mongodb\Eloquent\Model as MongoModel;
 
-class Producto extends Model
+class Producto extends MongoModel
 {
     use HasApiTokens;
     use HasFactory;
