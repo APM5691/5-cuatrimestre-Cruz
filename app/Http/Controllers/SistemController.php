@@ -136,12 +136,12 @@ class SistemController extends Controller
         return  view("templates.registrar_productos");
     }
 
-    public function modificarProductos(ProductosModel $id)
+    public function modificarProductos(Producto $id)
     {
         return view("templates.editarProductos")
             ->with(['usu' => $id]);
     }
-    public function salvarProductos(ProductosModel $id, Request $request)
+    public function salvarProductos(Producto $id, Request $request)
     {
 
         $id->update($request->only('nombre_producto', 'no_existencias', 'precio', 'descripcion', 'medida', 'precio_oferta'));
@@ -149,7 +149,7 @@ class SistemController extends Controller
         return redirect()->route('productos');
     }
 
-    public function borrarProducto(ProductosModel $id)
+    public function borrarProducto(Producto $id)
     {
         $id->delete();
         return redirect()->route('productos');

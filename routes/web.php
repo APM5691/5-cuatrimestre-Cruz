@@ -67,17 +67,17 @@ Route::name('borrarProducto')->get('borrarProducto/{id}', 'App\Http\Controllers\
 
 
 //-------------------------------------------Ventas--------------------------------------------------------------
-Route::name('ventas')->get('ventas/', 'App\Http\Controllers\CRUDController@ventas');
+Route::name('ventas')->get('ventas/', 'App\Http\Controllers\SistemController@ventas');
 
-Route::name('guardarVentas')->post('guardarVentas/', 'App\Http\Controllers\CRUDController@guardarVentas');
+Route::name('guardarVentas')->post('guardarVentas/', 'App\Http\Controllers\SistemController@guardarVentas');
 
-Route::name('registrarVentas')->get('registrarVentas/', 'App\Http\Controllers\CRUDController@registrarVentas');
+Route::name('registrarVentas')->get('registrarVentas/', 'App\Http\Controllers\SistemController@registrarVentas');
 
-Route::name('modificarVentas')->get('modificarVentas/{id}', 'App\Http\Controllers\CRUDController@modificarVentas');
+Route::name('modificarVentas')->get('modificarVentas/{id}', 'App\Http\Controllers\SistemController@modificarVentas');
 
-Route::name('salvarVentas')->put('salvarVentas/{id}', 'App\Http\Controllers\CRUDController@salvarVentas');
+Route::name('salvarVentas')->put('salvarVentas/{id}', 'App\Http\Controllers\SistemController@salvarVentas');
 
-Route::name('borrarVenta')->get('borrarVenta/{id}', 'App\Http\Controllers\CRUDController@borrarVenta');
+Route::name('borrarVenta')->get('borrarVenta/{id}', 'App\Http\Controllers\SistemController@borrarVenta');
 
 //-------------------------------------------Materiales--------------------------------------------------------------
 Route::name('materiales')->get('materiales/', 'App\Http\Controllers\CRUDController@materiales');

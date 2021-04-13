@@ -16,7 +16,7 @@ class CreateProductoTable extends Migration
         //cambiar a productos
         Schema::create('producto', function (Blueprint $table) {
             $table->id();
-            $table->integer('tipo_de_joya_id');
+            $table->integer('tipo_de_joya_id')->nullable();
             $table->string('clave', 25);
             $table->string('nombre_producto', 200);
             $table->Integer('numero_existencias');

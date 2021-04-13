@@ -84,8 +84,9 @@
 						</header>
 						<p><h4>Si desea acudir a nuestro establecimiento para comprar o recibir tus productos, puede consultar la dirección en el siguiente enlace, por el bien de todos mantengamos las medidas de prevención de contagio, esperamos su visita.</h4> </p>
 						<ul class="actions">
-							<li><a href="" class="button big"><i class="fas fa-map-marked"></i>  Aquí</a></li>
+							<li><a href="https://goo.gl/maps/MP9HsaTvYaiyjYYh7" class="button big"><i class="fas fa-map-marked"></i>  Aquí</a></li>
 						</ul>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.660611151841!2d-99.47962168561929!3d19.340528048631196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20a14878a64eb%3A0x65bdb503fdce37bc!2sUniversidad%20Tecnol%C3%B3gica%20del%20Valle%20de%20Toluca!5e0!3m2!1ses-419!2smx!4v1618356328293!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					</div>
 					
 				</section>
