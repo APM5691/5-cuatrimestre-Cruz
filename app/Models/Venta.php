@@ -10,7 +10,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Jenssegers\Mongodb\Eloquent\Model as MongoModel;
 
-class Venta extends MongoModel
+class Venta extends Model
 {
     use HasApiTokens;
     use HasFactory;

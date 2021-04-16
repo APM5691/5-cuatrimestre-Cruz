@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model as MongoModel;
 
-class DetalleVenta extends MongoModel
+class DetalleVenta extends Model
 {
     use HasFactory;
 
