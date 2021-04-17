@@ -35,42 +35,42 @@
 					</div>
 
 					<div style="padding: 1%;">
-						Clave Del Producto : <input type="text" name="clave" value="{{ old('clave')}}">
+						Clave Del Producto* : <input type="text" name="clave" value="{{ old('clave')}}" required>
 					</div>
 					@if($errors->first('clave')) <i>{{$errors -> first ('clave')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Nombre Del Producto : <input type="text" name="nombre_producto" value="{{ old('nombre_producto')}}">
+						Nombre Del Producto* : <input type="text" name="nombre_producto" value="{{ old('nombre_producto')}}" required>
 					</div>
 					@if($errors->first('nombre_producto')) <i>{{$errors -> first ('nombre_producto')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Numero de existencias : <input type="number" name="numero_existencias" value="{{ old('numero_existencias')}}">
+						Numero de existencias* : <input type="number" name="numero_existencias" value="{{ old('numero_existencias')}}" required>
 					</div>
 					@if($errors->first('numero_existencias')) <i>{{$errors -> first ('numero_existencias')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Precio : <input type="number" name="precio"><br>
+						Precio* : <input type="number" name="precio" required><br>
 					</div>
 					@if($errors->first('precio')) <i>{{$errors -> first ('precio')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Descripcion : <input type="textarea" name="descripcion" value="{{ old('descripcion')}}"><br>
+						Descripcion* : <input type="textarea" name="descripcion" value="{{ old('descripcion')}}" required><br>
 					</div>
 					@if($errors->first('descripcion')) <i>{{$errors -> first ('descripcion')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Medida : <input type="number" name="medida"><br>
+						Medida* : <input type="number" name="medida" required><br>
 					</div>
 					@if($errors->first('medida')) <i>{{$errors -> first ('medida')}}</i>@endif
 
 
 					<div style="padding: 1%;">
-						Precio oferta : <input type="number" name="precio_oferta"><br>
+						Precio oferta* : <input type="number" name="precio_oferta" required><br>
 					</div>
 					@if($errors->first('precio_oferta')) <i>{{$errors -> first ('precio_oferta')}}</i>@endif
 					
-					Imagen : <input type="file" name="fotografia"><br>
+					Imagen* : <input type="file" name="fotografia" required><br>
 					<hr>
 					<!--*Genero : <input type="text" name="gen"><br>
 

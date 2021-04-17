@@ -28,7 +28,7 @@
 			<h2>Editar Materiales</h2>
 
 
-				<form action="{{ route('salvarMateriales', ['id' => $usu->id_material]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
+				<form action="{{ route('salvarMateriales', ['id' => $usu->id]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
 
 					{{ csrf_field() }}
 					{{ method_field('PUT') }} 

@@ -44,8 +44,8 @@
 							<tr>
 								<td>{{ $usu->nombre}}</td>
 								<td>{{ $usu->tipo_material}}</td>
-								<td><h3><a href="{{ route('modificarMateriales', ['id' => $usu->id_material]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3></td>
-								<td><h3><a href="{{ route('borrarMaterial', ['id' => $usu->id_material]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3></td>
+								<td><h3><a href="{{ route('modificarMateriales', ['id' => $usu->id]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3></td>
+								<td><h3><a href="{{ route('borrarMaterial', ['id' => $usu->id]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3></td>
 							</tr>
 						</tbody>
 

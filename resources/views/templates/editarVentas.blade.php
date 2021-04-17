@@ -28,7 +28,7 @@
 			<h2>Editar Ventas</h2>
 
 
-				<form action="{{ route('salvarVentas', ['id' => $usu->id_venta]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
+				<form action="{{ route('salvarVentas', ['id' => $usu->id]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
 
 					{{ csrf_field() }}
 					{{ method_field('PUT') }} 

@@ -54,9 +54,7 @@
 
 
 					<div class="card">
-						<img src="{{ asset('img/'
-						// .$usu->img
-						) }}" alt="Imagen" width="200" height="200">
+						<img src="{{ asset('img/'.$usu->fotografia) }} " alt="Imagen" width="200" height="200">
 						<div class="container">
 							Nombre del producto: {{ $usu->nombre_producto}} <br>
 							Numero de existencias actuales: {{ $usu->no_existencias}} <br>

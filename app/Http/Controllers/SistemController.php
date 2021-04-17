@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\DireccionesModel;
-use App\UsuariosModel;
-use App\ProductosModel;
 use App\Http\Controllers\Controller;
 use App\Models\Cliente;
-use App\VentasModel;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Material;
 use Mapper;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\mail;
+use App\Mail\Welcome;
 
 class SistemController extends Controller
 {
@@ -79,7 +79,7 @@ class SistemController extends Controller
             'tipo_sesion' => $request->input('tipo_sesion'),
 
         ));
-
+        Mail::to($request->correo_electronico)->send(new Welcome($usu));
         return redirect()->route('iniciar_sesion');
     }
 
@@ -236,5 +236,71 @@ class SistemController extends Controller
             ->with(['usus' => $ventas])
             ->with(['comps' => $comps])
             ->with(['todos' => $todos]);
+    }
+    public function ventas()
+    {
+        $usus = Venta::all();
+        return  view("templates.ventas")
+            ->with(['usus' => $usus]);
+    }
+
+    public function modificarVentas(Venta $id)
+    {
+        return view("templates.editarVentas")
+            ->with(['usu' => $id]);
+    }
+    
+    
+    public function salvarVentas(Venta $id, Request $request)
+    {
+
+        $id->update($request->only('monto_total', 'direcciones_id', 'clientes_id'));
+
+        return redirect()->route('ventas');
+    }
+    public function borrarVenta(Venta $id)
+    {
+        $id->delete();
+        return redirect()->route('ventas');
+    }
+
+
+    public function registrarMateriales()
+    {
+        return  view("templates.registrar_materiales");
+    }
+    public function guardarMateriales(Request $request)
+    {
+
+        $usu = Material::create(array(
+            'nombre' => $request->input('nombre'),
+            'tipo_material' => $request->input('tipo_material'),
+        ));
+
+        return redirect()->route('materiales');
+    }
+
+    public function materiales()
+    {
+        $usus = Material::all();
+        return  view("templates.materiales")
+            ->with(['usus' => $usus]);
+    }
+    public function modificarMateriales(Material $id)
+    {
+        return view("templates.editarMateriales")
+            ->with(['usu' => $id]);
+    }
+    public function salvarMateriales(Material $id, Request $request)
+    {
+
+        $id->update($request->only('nombre', 'tipo_material'));
+
+        return redirect()->route('materiales');
+    }
+    public function borrarMaterial(Material $id)
+    {
+        $id->delete();
+        return redirect()->route('materiales');
     }
 }
