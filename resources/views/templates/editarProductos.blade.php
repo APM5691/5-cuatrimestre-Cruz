@@ -28,7 +28,7 @@
 			<h2>Editar Productos</h2>
 
 
-				<form action="{{ route('salvarProductos', ['id' => $usu->id_producto]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
+				<form action="{{ route('salvarProductos', ['id' => $usu->id]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
 
 					{{ csrf_field() }}
 					{{ method_field('PUT') }} 
@@ -39,9 +39,9 @@
 					@if($errors->first('nombre_producto')) <i>{{$errors -> first ('nombre_producto')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Numero de existencias : <input type="number" name="no_existencias" value="{{ $usu->no_existencias}}">
+						Numero de existencias : <input type="number" name="numero_existencias" value="{{ $usu->numero_existencias}}">
 					</div>
-					@if($errors->first('no_existencias')) <i>{{$errors -> first ('no_existencias')}}</i>@endif
+					@if($errors->first('numero_existencias')) <i>{{$errors -> first ('numero_existencias')}}</i>@endif
 					
 
 					<div style="padding: 1%;">
@@ -50,7 +50,6 @@
 					@if($errors->first('precio')) <i>{{$errors -> first ('precio')}}</i>@endif
 
 					<div style="padding: 1%;">
-					<!-- como cambiar el tamaño -->
 						Descripcion : <input type="textarea" name="descripcion" value="{{ $usu->descripcion }}"><br>
 					</div>
 					@if($errors->first('descripcion')) <i>{{$errors -> first ('descripcion')}}</i>@endif

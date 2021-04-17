@@ -28,7 +28,7 @@
 
 				<form action="{{ route ('guardar')}}" method="POST" name="nuevo" enctype="multipart/form-data">
 
-					{{ csrf_field() }}
+					@csrf
 
 					Fecha de nacimiento : <input type="date" name="fecha_nacimiento">
 					@if($errors->first('fecha_nacimiento')) <i>{{$errors -> first ('fecha_nacimiento')}}</i>@endif
