@@ -12,7 +12,7 @@
 
 		@if(!empty(session('session_id')))
 
-		<a href="{{ route ('logout')}}" class="button big">Log Out</a>
+		<a href="{{ route ('logout')}}" class="button big">Cerrar secion</a>
 
 		
 

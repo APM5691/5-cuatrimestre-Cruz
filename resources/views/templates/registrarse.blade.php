@@ -43,11 +43,6 @@
 					@if($errors->first('nombre_cliente')) <i>{{$errors -> first ('nombre_cliente')}}</i>@endif
 
 					<div>
-						Email* : <input type="text" name="correo_electronico" value="{{ old('correo_electronico')}}" required><br>
-					</div>
-					@if($errors->first('correo_electronico')) <i>{{$errors -> first ('correo_electronico')}}</i>@endif
-
-					<div>
 						Apellido Paterno* : <input type="text" name="primer_apellido" value="{{ old('primer_apellido')}}" required><br>
 					</div>
 					@if($errors->first('primer_apellido')) <i>{{$errors -> first ('primer_apellido')}}</i>@endif
@@ -57,8 +52,18 @@
 					</div>
 					@if($errors->first('segundo_apellido')) <i>{{$errors -> first ('segundo_apellido')}}</i>@endif
 					<div>
-						Password* : <input type="text" name="password" value="{{ old('password')}}" required><br>
+						Email* : <input type="text" name="correo_electronico" value="{{ old('correo_electronico')}}" required><br>
 					</div>
+					@if($errors->first('correo_electronico')) <i>{{$errors -> first ('correo_electronico')}}</i>@endif
+					
+<div class="form-row">
+    <div class="col">
+Password*  <input class="form-control" type="password" name="password" id="password" value="{{ old('password')}}" required>
+</div>
+    <div class="col">
+  <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button>
+</div>
+  </div>
 					@if($errors->first('password')) <i>{{$errors -> first ('password')}}</i>@endif
 					<div>
 						Telefono* : <input type="text" name="telefono" value="{{ old('telefono')}}" required><br>
@@ -101,3 +106,15 @@
 </body>
 
 </html>
+
+
+<script>
+	function mostrarContrasena(){
+		var tipo = document.getElementById("password");
+		if(tipo.type == "password"){
+			tipo.type = "text";
+		}else{
+			tipo.type = "password";
+		}
+	}
+  </script>
