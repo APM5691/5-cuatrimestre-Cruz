@@ -168,14 +168,15 @@ class SistemController extends Controller
 
     public function carrito()
     {
-        $usus = ProductosModel::all();
+        $usus = Producto::all();
+        
         return view('templates.carrito')
             ->with(['usus' => $usus]);
     }
 
     public function addCarrito($id = null)
     {
-        $usus = ProductosModel::all();
+        $usus = Producto::all();
         return view('templates.carrito')
             ->with('id', $id)
             ->with(['usus' => $usus]);

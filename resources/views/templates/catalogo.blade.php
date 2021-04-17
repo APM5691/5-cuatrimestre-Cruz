@@ -73,8 +73,8 @@
 
 					<br>
 					<input type="submit" value="Buscar">
-					<button style="margin-left: 10px;"><a class="btn btn-primary" href="{{ url('/generate-pdf') }}"> Exportar a PDF</a></button>
-					<button style="margin-left: 10px;box-shadow:inset 0 0 0 2px #22d81b;"><a style="color: #59d625 !important;" class="btn btn-primary" href="{{ url('export') }}"> Exportar a Excel</a></button>
+					{{-- <button style="margin-left: 10px;"><a class="btn btn-primary" href="{{ url('/generate-pdf') }}"> Exportar a PDF</a></button>
+					<button style="margin-left: 10px;box-shadow:inset 0 0 0 2px #22d81b;"><a style="color: #59d625 !important;" class="btn btn-primary" href="{{ url('export') }}"> Exportar a Excel</a></button> --}}
 
 
 				</form>
