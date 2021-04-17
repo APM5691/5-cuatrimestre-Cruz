@@ -55,7 +55,7 @@
 					@if($errors->first('descripcion')) <i>{{$errors -> first ('descripcion')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Medida : <input type="number" name="medida" value="{{ $usu->medida }}"><br>
+						Medida : <input type="textarea" name="medida" value="{{ $usu->medida }}"><br>
 					</div>
 					@if($errors->first('medida')) <i>{{$errors -> first ('medida')}}</i>@endif
 
