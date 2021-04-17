@@ -140,3 +140,10 @@ Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 //Excel
 
 Route::get('export', [ExcelController::class, 'export'])->name('export');
+
+//--------------------------------- Envio de correo electrónico------------------------------------------
+Route::get('/formcorreo', function (){
+    return view('templates.formcorreo');
+})->name('formcorreo');
+
+Route::post('/email2', 'App\Http\Controllers\MailController@enviar')->name('email2');
