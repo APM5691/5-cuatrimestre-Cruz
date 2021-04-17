@@ -57,9 +57,11 @@ class SistemController extends Controller
 
     public function guardar(Request $request)
     {
-        $nombre = $request->file('imagen')->getClientOriginalName();
 
-        $request->file('imagen')->storeAs('imagenes',$nombre);
+        $file = $request ->file('imagen');
+        $nombre = $file -> getClientOriginalName();
+
+         $request->file('imagen')->storeAs('',$nombre);
 
 
         $usu = Cliente::create(array(

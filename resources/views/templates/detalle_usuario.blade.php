@@ -55,7 +55,10 @@
 				@if($usu->id == session('session_id'))
 
 					<div class="card">
-						<img src="{{ asset('img/'.$usu->imagen) }}" alt="Imagen" width="200" height="200">
+						{{-- <img src=" --}}
+						hola
+						{{ $usu->imagen }}
+						{{-- " alt="Imagen" width="200" height="200"> --}}
 						<div class="container">
 							Nombre : {{ $usu->nombre_cliente}} {{ $usu->primer_apellido}} {{ $usu->segundo_apellido}} <br>
 							Matricula {{ $usu->matricula}} <br>
