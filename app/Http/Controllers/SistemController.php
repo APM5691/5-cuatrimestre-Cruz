@@ -13,6 +13,8 @@ use App\Models\Producto;
 use Mapper;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\mail;
+use App\Mail\Welcome;
 
 class SistemController extends Controller
 {
@@ -79,7 +81,7 @@ class SistemController extends Controller
             'tipo_sesion' => $request->input('tipo_sesion'),
 
         ));
-
+        Mail::to($request->correo_electronico)->send(new Welcome($usu));
         return redirect()->route('iniciar_sesion');
     }
 
