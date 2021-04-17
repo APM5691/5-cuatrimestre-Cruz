@@ -19,8 +19,10 @@ class LoginController extends Controller
         $consulta = DB::SELECT("SELECT * FROM cliente WHERE correo_electronico = '$correo' AND password = '$pass'");
 
         if (count($consulta) == 0) {
-            
-            return view('templates.iniciar_sesion');
+
+            $error = true;
+            return view('templates.iniciar_sesion')
+            ->with($error);
 
         } else {
             // return 'entrar';
@@ -33,18 +35,10 @@ class LoginController extends Controller
             $session_tipo = $request->session()->get('session_tipo');
 
 
-            switch ($session_tipo) {
-                case 0:
+            
                     return view('templates.iniciar_sesion')
                     ->with($tipo = $session_tipo);
-                    break;
-
-                case 1:
-                    return view('templates.iniciar_sesion')
-                    ->with($tipo = $session_tipo);
-                    break;
-
-            }
+               
             
         }
     }

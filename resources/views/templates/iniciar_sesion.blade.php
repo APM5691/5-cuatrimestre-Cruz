@@ -74,7 +74,8 @@
 	@include ('layouts.footer')
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-	 @if(!empty(session('session_id')))
+
+	 
 	 <style type="text/css">
 	 	.swal-button{
 	 		background-color: #e04e32 !important;
@@ -84,15 +85,19 @@
 	 		color:white !important;
 	 	}
 	 </style>
-
+@if(!empty(session('session_id')))
 	 <script type="text/javascript">
           name=$('.name').data('name');
           
 				swal("Bienvenido "+name+" !","","success",{button:"OK",});
                 </script>
-
-				
-                @endif
+				 @endif
+				 
+  {{-- @if($error == true)
+  		<script type="text/javascript">
+		  swal("Error Correo electroncio o contraseña incorrecta",{button:"OK",});
+		  </script>
+ @endif --}}
 
 </body>
 
