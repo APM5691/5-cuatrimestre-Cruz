@@ -57,15 +57,14 @@ class SistemController extends Controller
 
     public function guardar(Request $request)
     {
- 
-        $img = $request->file('imagen')->getClientOriginalName();
+        $nombre = $request->file('imagen')->getClientOriginalName();
 
-        Storage::putFile('imagen', $request->file($img));
+        $request->file('imagen')->storeAs('imagenes',$nombre);
 
 
         $usu = Cliente::create(array(
 
-            'imagen' => $img,
+            'imagen' => $nombre,
             'nombre_cliente'  => $request->input('nombre_cliente'),
             'primer_apellido' => $request->input('primer_apellido'),
             'segundo_apellido' => $request->input('segundo_apellido'),
@@ -141,10 +140,11 @@ class SistemController extends Controller
         return view("templates.editarProductos")
             ->with(['usu' => $id]);
     }
+
     public function salvarProductos(Producto $id, Request $request)
     {
 
-        $id->update($request->only('nombre_producto', 'no_existencias', 'precio', 'descripcion', 'medida', 'precio_oferta'));
+        $id->update($request->only('nombre_producto', 'numero_existencias', 'precio', 'descripcion', 'medida', 'precio_oferta'));
 
         return redirect()->route('productos');
     }

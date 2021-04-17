@@ -84,11 +84,14 @@
 	 		color:white !important;
 	 	}
 	 </style>
+
 	 <script type="text/javascript">
           name=$('.name').data('name');
           
 				swal("Bienvenido "+name+" !","","success",{button:"OK",});
                 </script>
+
+				
                 @endif
 
 </body>
