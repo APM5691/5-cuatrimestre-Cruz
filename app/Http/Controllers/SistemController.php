@@ -13,6 +13,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\mail;
 use App\Mail\Welcome;
+use App\Models\Direccion;
 
 class SistemController extends Controller
 {
@@ -220,13 +221,13 @@ class SistemController extends Controller
 
     public function registrarDireccion($id = null, $cantidad = null)
     {
-        $usus = UsuariosModel::find($id);
-        $direccion = DireccionesModel::find($id);
-        $ventas = VentasModel::all();
-        $comps = UsuariosModel::all();
-        $todos = DireccionesModel::all();
+        $usus = Cliente::find($id);
+        $direccion = Direccion::find($id);
+        $ventas = Venta::all();
+        $comps = Cliente::all();
+        $todos = Direccion::all();
 
-        $usu = VentasModel::create(array(
+        $usu = Venta::create(array(
             'monto_total'    => $cantidad,
             'direcciones_id' => $direccion->clientes_id,
             'clientes_id'    => $id,

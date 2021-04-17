@@ -65,7 +65,7 @@
 										<li>
 											<span class="opener">Direcciones</span>
 											<ul>
-												<li><a href="{{ route('registrarDireccion')}}">Registrar Nueva Direccion</a></li>
+												{{-- <li><a href="{{ route('registrarDireccion')}}">Registrar Nueva Direccion</a></li> --}}
 												<li><a href="{{ route('direcciones')}}">Ver Registro de direcciones</a></li>
 												
 											</ul>

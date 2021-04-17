@@ -75,6 +75,11 @@ integrity="sha384-oS3vJWV+0UjzBFQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7
   
 </head>
 	<body >
+
+		<button>
+		<a href="{{ route('home')}}">Regresar</a>
+	</button>
+
 		<head>
 			<h1 class="text-center text-light">Reporte de Ventas  </h1>
 		</head>

@@ -64,22 +64,22 @@
 							<tr>
 								
 							@foreach($comps as $comp)
-							@if($usu->clientes_id  == $comp->id_usuario)
-								<td>{{ $comp->nombre}} {{ $comp->app}} {{ $comp->apm}}</td>
+							@if($usu->clientes_id  == $comp->id)
+								<td>{{ $comp->nombre_cliente}} {{ $comp->primer_apellido}} {{ $comp->segundo_apellido}}</td>
 							@endif
 							@endforeach
 							
 								<td>{{ $usu->calle}}</td>
-								<td>{{ $usu->numero_direccion}}</td>
+								<td>{{ $usu->numero}}</td>
 								<td>{{ $usu->localidad}}</td>
 								<td>{{ $usu->municipio}}</td>
 								<td>{{ $usu->estado}}</td>
 
 								<td>
-									<h3><a href="{{ route('modificarVentas', ['id' => $usu->id_venta]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3>
+									<h3><a href="{{ route('modificarVentas', ['id' => $usu->id]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3>
 								</td>
 								<td>
-									<h3><a href="{{ route('borrarVenta', ['id' => $usu->id_venta]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3>
+									<h3><a href="{{ route('borrarVenta', ['id' => $usu->id]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3>
 								</td>
 							</tr>
 						</tbody>
