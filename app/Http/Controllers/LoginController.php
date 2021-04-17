@@ -21,6 +21,9 @@ class LoginController extends Controller
         if (count($consulta) == 0) {
 
             $error = true;
+            echo'<script type="text/javascript">
+            alert("Usuario/Contraseña son incorrectos o no existen");
+            </script>';
             return view('templates.iniciar_sesion')
             ->with($error);
 
