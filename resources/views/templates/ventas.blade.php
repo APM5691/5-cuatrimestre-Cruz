@@ -26,7 +26,7 @@
 			@include ('layouts.header')
 
 
-				<h2>Productos registrados</h2>
+				<h2>Ventas registrados</h2>
 
 				<div>
 					<table>

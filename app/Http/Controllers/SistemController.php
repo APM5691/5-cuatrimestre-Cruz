@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\DireccionesModel;
-use App\UsuariosModel;
-use App\ProductosModel;
 use App\Http\Controllers\Controller;
 use App\Models\Cliente;
-use App\VentasModel;
 use App\Models\Venta;
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Material;
 use Mapper;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
@@ -264,5 +261,45 @@ class SistemController extends Controller
     {
         $id->delete();
         return redirect()->route('ventas');
+    }
+
+
+    public function registrarMateriales()
+    {
+        return  view("templates.registrar_materiales");
+    }
+    public function guardarMateriales(Request $request)
+    {
+
+        $usu = Material::create(array(
+            'nombre' => $request->input('nombre'),
+            'tipo_material' => $request->input('tipo_material'),
+        ));
+
+        return redirect()->route('materiales');
+    }
+
+    public function materiales()
+    {
+        $usus = Material::all();
+        return  view("templates.materiales")
+            ->with(['usus' => $usus]);
+    }
+    public function modificarMateriales(Material $id)
+    {
+        return view("templates.editarMateriales")
+            ->with(['usu' => $id]);
+    }
+    public function salvarMateriales(Material $id, Request $request)
+    {
+
+        $id->update($request->only('nombre', 'tipo_material'));
+
+        return redirect()->route('materiales');
+    }
+    public function borrarMaterial(Material $id)
+    {
+        $id->delete();
+        return redirect()->route('materiales');
     }
 }

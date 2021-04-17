@@ -80,17 +80,17 @@ Route::name('salvarVentas')->put('salvarVentas/{id}', 'App\Http\Controllers\Sist
 Route::name('borrarVenta')->get('borrarVenta/{id}', 'App\Http\Controllers\SistemController@borrarVenta');
 
 //-------------------------------------------Materiales--------------------------------------------------------------
-Route::name('materiales')->get('materiales/', 'App\Http\Controllers\CRUDController@materiales');
+Route::name('materiales')->get('materiales/', 'App\Http\Controllers\SistemController@materiales');
 
-Route::name('guardarMateriales')->post('guardarMateriales/', 'App\Http\Controllers\CRUDController@guardarMateriales');
+Route::name('guardarMateriales')->post('guardarMateriales/', 'App\Http\Controllers\SistemController@guardarMateriales');
 
-Route::name('registrarMateriales')->get('registrarMateriales/', 'App\Http\Controllers\CRUDController@registrarMateriales');
+Route::name('registrarMateriales')->get('registrarMateriales/', 'App\Http\Controllers\SistemController@registrarMateriales');
 
-Route::name('modificarMateriales')->get('modificarMateriales/{id}', 'App\Http\Controllers\CRUDController@modificarMateriales');
+Route::name('modificarMateriales')->get('modificarMateriales/{id}', 'App\Http\Controllers\SistemController@modificarMateriales');
 
-Route::name('salvarMateriales')->put('salvarMateriales/{id}', 'App\Http\Controllers\CRUDController@salvarMateriales');
+Route::name('salvarMateriales')->put('salvarMateriales/{id}', 'App\Http\Controllers\SistemController@salvarMateriales');
 
-Route::name('borrarMaterial')->get('borrarMaterial/{id}', 'App\Http\Controllers\CRUDController@borrarMaterial');
+Route::name('borrarMaterial')->get('borrarMaterial/{id}', 'App\Http\Controllers\SistemController@borrarMaterial');
 
 Route::name('addCarrito')->get('addCarrito/{id?}', 'App\Http\Controllers\SistemController@addCarrito');
 
