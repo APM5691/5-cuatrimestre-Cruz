@@ -8,6 +8,7 @@ use App\ProductosModel;
 use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\VentasModel;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use Mapper;
@@ -237,5 +238,31 @@ class SistemController extends Controller
             ->with(['usus' => $ventas])
             ->with(['comps' => $comps])
             ->with(['todos' => $todos]);
+    }
+    public function ventas()
+    {
+        $usus = Venta::all();
+        return  view("templates.ventas")
+            ->with(['usus' => $usus]);
+    }
+
+    public function modificarVentas(Venta $id)
+    {
+        return view("templates.editarVentas")
+            ->with(['usu' => $id]);
+    }
+    
+    
+    public function salvarVentas(Venta $id, Request $request)
+    {
+
+        $id->update($request->only('monto_total', 'direcciones_id', 'clientes_id'));
+
+        return redirect()->route('ventas');
+    }
+    public function borrarVenta(Venta $id)
+    {
+        $id->delete();
+        return redirect()->route('ventas');
     }
 }
